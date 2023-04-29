@@ -20,8 +20,11 @@ async def process_start_command(message: types.Message):
 async def process_sec_command(message: types.Message):
     await message.reply("Ты нашел секретку! это фото кокоса имеет очень важную роль как кокос из игры Team Fortress 2, без этого кокоса бот и игра не запустятся, в игре от Valve никто не знает что делает этот кокос но в моем боте он служит наполнителем переменной пока она не используется")
     photo = open("imeg/спасалка.jpg", "rb")
-    await bot.send_photo(message.from_user.id, photo = photo)
+    await message.reply_photo(photo = photo)
     photo.close()
+
+
+
 @dp.message_handler(commands=['help'])
 async def process_help_command(message: types.Message):
     await message.reply("""
@@ -61,7 +64,7 @@ async def process_help_command(message: types.Message):
     kat1 = random.choice(kat)
     print(p)   
     photo = open("imeg/{}".format(kat1), "rb")
-    await bot.send_photo(message.from_user.id, photo=photo)
+    await message.reply_photo(photo=photo)
     photo.close()
 if __name__ == '__main__':
     executor.start_polling(dp, skip_updates=True)
