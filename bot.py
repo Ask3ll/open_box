@@ -10,9 +10,8 @@ from aiogram.dispatcher.filters import Text
 from aiogram.dispatcher.filters.state import State, StatesGroup
 from aiogram.types import ParseMode
 from keybord import *
-from config import TOKEN
 import random
-bot = Bot(token=TOKEN)
+bot = Bot(token="5484671194:AAGbVwLRsK1xjcTk2Q4ix4KRhiBf3LMI6mI")
 dp = Dispatcher(bot)
 @dp.message_handler(commands=['start'])
 async def process_start_command(message: types.Message):
